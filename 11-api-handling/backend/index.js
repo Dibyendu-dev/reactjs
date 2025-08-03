@@ -304,8 +304,9 @@ app.get("/api/products", (req, res) => {
   ];
 
   if (req.query.search) {
+     const searchTerm = req.query.search.trim().toLowerCase();
     const filterProducts = products.filter((product) =>
-      product.title.includes(req.query.search)
+     product.title.toLowerCase().includes(searchTerm)
     );
     res.send(filterProducts);
     return;

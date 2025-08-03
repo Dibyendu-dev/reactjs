@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 
 const useCustomQuery =(urlPath)=>{
-const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([])
   const [error,setError]= useState(false)
   const [loading, setLoading] = useState(false)
   useEffect(()=>{
@@ -22,7 +22,7 @@ const [products, setProducts] = useState([])
       }
     })()
 
-  },[])
+  },[urlPath])
   return {
     products,
     error,
