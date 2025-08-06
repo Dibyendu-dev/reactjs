@@ -14,7 +14,7 @@ export default function Task({ task, index, columnId }) {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
-          <span>{task.content}</span>
+          <span className='text-white'>{task.content}</span>
           <button onClick={() => dispatch(deleteTask({ taskId: task.id, columnId }))}>❌</button>
         </div>
       )}
